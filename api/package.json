@@ -1,0 +1,55 @@
+{
+  "name": "sound-suggestion",
+  "version": "1.0.0",
+  "description": "This is a music suggestion app, which serves as a challenge for a job selection process",
+  "main": "index.js",
+  "engines": {
+    "node": "17"
+  },
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "test": " NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pravtz/sound-suggestion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pravtz/sound-suggestion.git/issues"
+  },
+  "keywords": [
+    "music",
+    "prisma",
+    "typescript",
+    "api"
+  ],
+  "author": "Ederson Oliveira Pravtz",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "supertest": "^6.2.2",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.1.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "pino": "^7.10.0",
+    "pino-pretty": "^7.6.1"
+  }
+}
