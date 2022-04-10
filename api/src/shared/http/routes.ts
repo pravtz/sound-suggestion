@@ -1,4 +1,4 @@
-import {Router} from 'express'
+import { Router } from 'express'
 import musicRoutes from '@modules/music/routes'
 
 const mainRoutes = Router()

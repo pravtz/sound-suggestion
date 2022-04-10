@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.enable": true,
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "boundary",
+  "explorer.compactFolders": false,
+
+  "eslint.workingDirectories": ["./api"]
+}

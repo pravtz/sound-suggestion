@@ -1,13 +1,13 @@
-import { logger } from './../utils/logger';
+import { logger } from './../utils/logger'
 import 'dotenv/config'
-import express, {Request, Response} from 'express'
-import 'express-async-errors';
+import express, { Request, Response } from 'express'
+import 'express-async-errors'
 // import { errors } from 'celebrate'
 import AppErrors from '../errors/App.error'
 import routes from './routes'
 import cors from 'cors'
 
-const app = express();
+const app = express()
 
 app.use(cors())
 
@@ -17,22 +17,18 @@ app.use(routes)
 
 // app.use(errors())
 
-
-app.use((error: Error, request: Request, response: Response ) => {
-    if (error instanceof AppErrors) {
-      return response.status(error.statusCode).json({
-        status: 'error',
-        message: error.message,
-      });
-    }
-    logger.error(error)
-    return response.status(500).json({
+app.use((error: Error, request: Request, response: Response) => {
+  if (error instanceof AppErrors) {
+    return response.status(error.statusCode).json({
       status: 'error',
-      message: '💩 Internal server error',
-    });
-  },
-);
-
-
+      message: error.message
+    })
+  }
+  logger.error(error)
+  return response.status(500).json({
+    status: 'error',
+    message: '💩 Internal server error'
+  })
+})
 
 export default app
