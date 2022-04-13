@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import musicRoutes from '@modules/music/routes'
+import musicRoutes from '@modules/Sound/routes'
 
 const mainRoutes = Router()
 
