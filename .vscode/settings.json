@@ -4,7 +4,7 @@
     "source.fixAll.eslint": true
   },
   "eslint.enable": true,
-  "editor.rulers": [80],
+  "editor.rulers": [100],
   "editor.renderWhitespace": "boundary",
   "explorer.compactFolders": false,
 
