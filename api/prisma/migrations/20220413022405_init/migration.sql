@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE `sounds` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `music` VARCHAR(255) NOT NULL,
+    `album` VARCHAR(255) NOT NULL,
+    `band` VARCHAR(255) NOT NULL,
+    `birth` YEAR NOT NULL,
+    `rating` DOUBLE NOT NULL DEFAULT 0,
+    `vote` INTEGER NOT NULL DEFAULT 0,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

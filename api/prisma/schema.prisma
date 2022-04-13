@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Sound {
+  id        Int      @id @default(autoincrement())
+  music     String   @db.VarChar(255)
+  album     String   @db.VarChar(255)
+  band      String   @db.VarChar(255)
+  birth     Int      @db.Year
+  rating    Float    @default(0)
+  vote      Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("sounds")
+}
