@@ -102,6 +102,21 @@ class SoundRepository implements ISoundRepository {
     const count = await prisma.sound.count()
     return count
   }
+  async getTopRatingTimit() {
+    const getRatingLimit = await prisma.sound.findMany({
+      select: {
+        id: true,
+        music: true,
+        vote: true,
+        rating: true
+      },
+      orderBy: {
+        rating: 'desc'
+      },
+      take: 10
+    })
+    return getRatingLimit
+  }
 }
 
 export default SoundRepository

@@ -34,6 +34,10 @@ class RatingSoundService {
 
     return cal
   }
+  async getTopRating() {
+    const listTop = await this.rating.getTopRatingTimit()
+    return listTop
+  }
 }
 
 export default RatingSoundService

@@ -24,6 +24,7 @@ soundsRoutes.put('/:id', UpdateSoundValidate, resourceController.update)
 soundsRoutes.delete('/:id', DeleteSoundValidate, resourceController.delete)
 
 // special routes
+soundsRoutes.get('/rating/top', ratingController.getTopRating)
 soundsRoutes.get(
   '/rating/:id',
   GetRatingSoundValidate,

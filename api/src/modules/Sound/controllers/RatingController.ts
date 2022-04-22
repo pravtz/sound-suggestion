@@ -28,4 +28,13 @@ export default class RatingController {
       throw new AppErrors(`🚫 Error controller:setRating! Details: ${error}`)
     }
   }
+  public async getTopRating(request: Request, response: Response) {
+    const istance = new RatingSoundService()
+    try {
+      const list = await istance.getTopRating()
+      return response.status(201).json(list)
+    } catch (error) {
+      throw new AppErrors(`🚫 Error controller:getTopRating! Details: ${error}`)
+    }
+  }
 }
