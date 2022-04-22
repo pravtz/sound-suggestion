@@ -1,256 +1,55 @@
 import { Container, Header, Main } from "./style";
 import { FaMedal, FaStar, FaVoteYea } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { SoundSugestionApi as api } from "../../../service/api";
 
 const RankingScreen = () => {
+  const [sounds, setSounds] = useState([]);
+  useEffect(() => {
+    api
+      .get("/rating/top")
+      .then((response) => setSounds(response.data))
+      .catch((err) => {
+        console.log(`ops...! ocorreu um erro ${err}`);
+      });
+  }, []);
+
   return (
     <Container>
       <Header>
-        <h2>Rating</h2>
+        <h2>TOP 10</h2>
       </Header>
       <Main>
         <table>
           {/* start line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>1</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>2</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>3</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>4</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>4</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>5</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>6</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>7</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>8</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>9</span>
-            </td>
-            <td>White Riot White</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
-          {/* end line */}
-          <tr>
-            <td>
-              <i>
-                <FaMedal />
-              </i>
-              <span>10</span>
-            </td>
-            <td>White Riot</td>
-            <td>
-              <span>5</span>
-              <i>
-                <FaStar />
-              </i>
-            </td>
-            <td>
-              <span>48</span>
-              <i>
-                <FaVoteYea />
-              </i>
-            </td>
-          </tr>
+          {sounds.map(({ id, music, rating, vote }: any, i) => {
+            return (
+              <tr key={id}>
+                <td>
+                  <i>
+                    <FaMedal />
+                  </i>
+                  <span>{++i}</span>
+                </td>
+                <td>
+                  {music.length > 20 ? music.substring(0, 10) + "..." : music}
+                </td>
+                <td>
+                  <span>{(rating / vote).toFixed(1)}</span>
+                  <i>
+                    <FaStar />
+                  </i>
+                </td>
+                <td>
+                  <span>{vote}</span>
+                  <i>
+                    <FaVoteYea />
+                  </i>
+                </td>
+              </tr>
+            );
+          })}
+
           {/* end line */}
         </table>
       </Main>

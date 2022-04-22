@@ -29,7 +29,7 @@ export const Wrapper = styled("div", {
   //border: "1px solid red",
 });
 export const Main = styled("main", {
-  overflow: "scroll",
+  overflow: "auto",
   borderWidth: "1px",
   borderStyle: "solid",
   borderColor: "$border-box",

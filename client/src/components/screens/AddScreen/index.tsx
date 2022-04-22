@@ -124,7 +124,9 @@ const AddScreen = () => {
                     name="music"
                     placeholder="ex.: Black In Black"
                   />
-                  <span>{errors.music && touched.music && errors.music}</span>
+                  {errors.music && touched.music ? (
+                    <span>errors.music</span>
+                  ) : null}
                 </div>
                 <div>
                   <LabelInput htmlFor="album">Álbum</LabelInput>
@@ -133,7 +135,9 @@ const AddScreen = () => {
                     name="album"
                     placeholder="ex.: Black In Black Show"
                   />
-                  <span>{errors.album && touched.album && errors.album}</span>
+                  {errors.album && touched.album ? (
+                    <span>errors.album</span>
+                  ) : null}
                 </div>
               </GroupForm>
               <GroupForm>
@@ -144,7 +148,9 @@ const AddScreen = () => {
                     name="band"
                     placeholder="ex.: AC/DC"
                   />
-                  <span>{errors.band && touched.band && errors.band}</span>
+                  {errors.band && touched.band ? (
+                    <span>errors.band</span>
+                  ) : null}
                 </div>
                 <div>
                   <LabelInput htmlFor="birth">Ano de lançamento</LabelInput>
@@ -153,7 +159,9 @@ const AddScreen = () => {
                     name="birth"
                     placeholder="ex.: 1980"
                   />
-                  <span>{errors.birth && touched.birth && errors.birth}</span>
+                  {errors.band && touched.band ? (
+                    <span>errors.band</span>
+                  ) : null}
                 </div>
               </GroupForm>
               <GroupButton>
