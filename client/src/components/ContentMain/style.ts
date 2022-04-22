@@ -24,10 +24,12 @@ export const Input = styled("input", {
 });
 
 export const Wrapper = styled("div", {
-  height: "97%",
+  height: "63vh",
+
   //border: "1px solid red",
 });
 export const Main = styled("main", {
+  overflow: "scroll",
   borderWidth: "1px",
   borderStyle: "solid",
   borderColor: "$border-box",
@@ -38,6 +40,7 @@ export const Main = styled("main", {
 export const Table = styled("table", {
   width: "100%",
   color: "$text",
+
   th: {
     color: "$text-light",
     textAlign: "left",

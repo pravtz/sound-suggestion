@@ -56,7 +56,12 @@ const Login = () => {
         }) => (
           <FormByFormik>
             <LabelInput htmlFor="firstName">Qual o seu nome?</LabelInput>
-            <FieldByFormik id="firstName" name="firstName" placeholder="Nome" />
+            <FieldByFormik
+              autoFocus
+              id="firstName"
+              name="firstName"
+              placeholder="Nome"
+            />
             <span>
               {errors.firstName && touched.firstName && errors.firstName}
             </span>

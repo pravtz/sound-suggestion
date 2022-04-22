@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 const NavBottomMain = () => {
   const router = useRouter();
+
   return (
     <Container>
       <ul>
@@ -33,8 +34,12 @@ const NavBottomMain = () => {
         <li>
           <ButtonNav
             icon={<BsFillCaretLeftFill />}
-            text="Sair"
-            onClick={() => router.push("/")}
+            text={router.pathname !== "/home" ? "Voltar" : "Sair"}
+            onClick={
+              router.pathname !== "/home"
+                ? () => router.back()
+                : () => router.push("/")
+            }
           />
         </li>
       </ul>
